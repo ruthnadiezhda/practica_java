@@ -25,6 +25,8 @@ public class EstructurasDeControl3 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             e.printStackTrace();
+        } finally{
+            entrada.close();
         }
 
         */
@@ -49,6 +51,8 @@ public class EstructurasDeControl3 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             e.printStackTrace();
+        } finally{
+            entrada.close();
         }
             */
 
@@ -65,6 +69,8 @@ public class EstructurasDeControl3 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             e.printStackTrace();
+        } finally{
+            entrada.close();
         }
             */
 
@@ -97,10 +103,9 @@ public class EstructurasDeControl3 {
             System.out.println("Error: Ingresó formato incorrecto");
         } catch (Exception e) {
             System.out.println("Error: "+ e.getMessage());
+        } finally{
+            entrada.close();
         }
-
-
-        entrada.close();
     }
     
 }
