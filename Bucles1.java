@@ -18,7 +18,19 @@ public class Bucles1 {
         //InvertirUnArray(entrada);
 
         //CALCULAR SUMA ACUMULADA
-        CalcularSumaAcumulada(entrada);
+        //CalcularSumaAcumulada(entrada);
+
+        //CONTANDO ELEMENTOS PARES
+        //ContandoElementosPares(entrada);
+
+        //CALCULANDO EL PROMEDIO
+        //CalculandoElPromedio(entrada);
+
+        //CONCATENANDO ELEMENTOS
+        //ConcatenandoElementos(entrada);
+
+        //CONTAR OCURRENCIAS
+        ContarOcurrencias(entrada);
 
         entrada.close();
     }
@@ -83,6 +95,94 @@ public class Bucles1 {
             sumatoria+=arrayASumar[z];
             arraySumatoria[z] = sumatoria;
             System.out.println("Elemento " + z + " del array sumatoria: " + arraySumatoria[z] );
+        }
+    }
+
+    private static void ContandoElementosPares(Scanner scannerEntrada){
+        int[] arrayPares = new int[10];
+
+        for( int i =0; i<arrayPares.length;i++){
+            arrayPares[i]= (int) (Math.random()*(100-1))+1;
+        }
+
+        System.out.println("Elementos del array: ");
+        for (int elemento : arrayPares){
+            System.out.print(elemento+" ");
+        }
+
+        System.out.println(" ");
+        int conteoPares=0;
+        System.out.println("Son pares: ");
+        for (int elemento : arrayPares){
+            if(elemento%2==0){
+                conteoPares++;
+                System.out.print(elemento + " ");
+            }
+        }
+        System.out.println(" ");
+        System.out.println("Hay " + conteoPares + " numeros pares");
+    }
+
+    private static void CalculandoElPromedio(Scanner scannerEntrada){
+        float[] arrayPromedio = new float[20];
+
+        for (int j=0;j<arrayPromedio.length;j++){
+            arrayPromedio[j] = (float)(Math.random()*(100-1))+1;
+        }
+        
+        System.out.println("Elementos del array: ");
+        float suma =0;
+        float promedio =0;
+        for (float elemento : arrayPromedio){
+            System.out.print(elemento + " ");
+        }
+        System.out.println(" ");
+
+        for (float elemento : arrayPromedio){
+            suma = suma+elemento;
+        }
+        System.out.println("La suma es: " + suma);
+        System.out.println("El promedio es: " + suma/arrayPromedio.length);
+    }
+
+    private static void ConcatenandoElementos(Scanner scannerEntrada){
+        String[] arrayCaracteres = {"h","o","l","a"," ","m","u","n","d","o"};
+
+        StringBuilder cadenaFinal = new StringBuilder();
+        
+        for (String elemento : arrayCaracteres){
+            cadenaFinal.append(elemento);
+        }
+
+        System.out.println("Cadena concatenada: " + cadenaFinal.toString());
+    }
+
+    private static void ContarOcurrencias(Scanner scannerEntrada){
+        char[] arrayOcurrencias = "Hola amigos de Egg, estoy aprendiendo JAVA y me gusta mucho".toCharArray();
+        
+        System.out.println("Ingrese el caracter a buscar: ");
+        char caracterABuscar = scannerEntrada.next().charAt(0);
+
+        char caracterABuscarLower = Character.toLowerCase(caracterABuscar);
+        char caracterABuscarUpper = Character.toUpperCase(caracterABuscar);
+
+        int contador =0;
+        for(char elemento : arrayOcurrencias){
+            
+            char elementoLower = Character.toLowerCase(elemento);
+            char elementoUpper = Character.toUpperCase(elemento);
+
+            if(caracterABuscarLower==elementoLower || caracterABuscarUpper == elementoUpper){
+                contador++;
+            }
+        }
+
+        if(contador==1){
+            System.out.println("El caracter " + caracterABuscar + " aparece " + contador + " vez");
+        } else if (contador>=2){
+            System.out.println("El caracter " + caracterABuscar + " aparece " + contador + " veces");
+        } else {
+            System.out.println("El caracter "+ caracterABuscar + " no aparece en la frase");
         }
     }
 }
