@@ -27,6 +27,8 @@ public class ClaseMath {
         //GENERACION ALEATORIA Y RAIZ CUADRADA
         GeneracionAleatoriaRaizCuadrada(entrada);
 
+        entrada.close();
+
     }
 
     private static void CalculandoValorAbsoluto(Scanner scannerEntrada){

@@ -11,6 +11,8 @@ public class ActividadesIntegradoras2 {
 
         //DESAFIO 2
         ValidacionDeContraseña (entrada);
+
+        entrada.close();
     }
 
     private static void ConversionUnidadesTemperatura(Scanner scannerEntrada){

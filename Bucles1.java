@@ -18,6 +18,9 @@ public class Bucles1 {
         //InvertirUnArray(entrada);
 
         //CALCULAR SUMA ACUMULADA
+
+
+        entrada.close();
     }
 
     private static void ImprimiendoElementos(Scanner scannerEntrada){

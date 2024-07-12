@@ -1,7 +1,8 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Arrays;
 
-public class Arrays {
+public class ClaseArrays {
     public static void main(String[] args) {
         
         Scanner entrada = new Scanner(System.in);
@@ -22,7 +23,15 @@ public class Arrays {
         //COpiandoElementos(entrada);
 
         //GENERANDONUMEROALEATORIOENTRELIMITES
-        GenerandoAleatorioEntreLimites(entrada);
+        //GenerandoAleatorioEntreLimites(entrada);
+
+        //SUMANDO ELEMENTOS EN POSICIONES PARES
+        //SumandoElementosPosicionesPares(entrada);
+
+        //ORDENANDO NOMBRES ALFABETICAMENTE
+        OrdenandoNombresAlfabeticamente(entrada);
+        
+        entrada.close();
     }
 
     private static void SumandoElementos(Scanner scannerEntrada){
@@ -153,5 +162,55 @@ public class Arrays {
 
     private static void GenerandoAleatorioEntreLimites(Scanner scannerEntrada){
         
+        int[] arrayAleatorio = new int[6];
+
+        for(int i=0; i<arrayAleatorio.length;i++){
+            arrayAleatorio[i] = (int)((Math.random()*(100-1))+1);
+            System.out.println("Elemento "+ i +" del array aleatorio : " + arrayAleatorio[i]);
+        }
+        
+        System.out.println(" ");
+
+        for(int j=0; j<arrayAleatorio.length;j++){
+            if(arrayAleatorio[j]%2==0){
+                System.out.println("Elemento "+j+ " del array aleatorio es par. El elemento es " + arrayAleatorio[j]);
+            }
+        }
+    }
+
+    private static void SumandoElementosPosicionesPares(Scanner scannerEntrada){
+        int[] arrayAleatorioPares = new int[5];
+
+        for(int i=0; i<arrayAleatorioPares.length;i++){
+            arrayAleatorioPares[i] = (int)((Math.random()*(100-1))+1);
+            System.out.println("Elemento "+ i +" del array aleatorio : " + arrayAleatorioPares[i]);
+        }
+
+        int sumaTotalPares =0;
+        for (int j=0; j<arrayAleatorioPares.length;j++){
+            if(j%2==0){
+                sumaTotalPares=sumaTotalPares+arrayAleatorioPares[j];
+                System.out.println("Posición par " + j + " sumada");
+            }
+        }
+        System.out.println("La suma total de los elementos en las posiciones pares es " + sumaTotalPares);
+    }
+
+    private static void OrdenandoNombresAlfabeticamente(Scanner scannerEntrada){
+        String[] arrayNombres = new String[4];
+
+        System.out.println("Ingrese 4 nombres: ");
+        arrayNombres[0]= scannerEntrada.nextLine();
+        arrayNombres[1]= scannerEntrada.nextLine();
+        arrayNombres[2]= scannerEntrada.nextLine();
+        arrayNombres[3]= scannerEntrada.nextLine();
+        
+        Arrays.sort(arrayNombres);
+
+        System.out.println("Nombres ordenados alfabeticamente: ");
+
+        for(String nombre : arrayNombres){
+            System.out.println("Nombre: " + nombre);
+        }
     }
 }
