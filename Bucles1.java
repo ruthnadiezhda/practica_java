@@ -18,7 +18,7 @@ public class Bucles1 {
         //InvertirUnArray(entrada);
 
         //CALCULAR SUMA ACUMULADA
-
+        CalcularSumaAcumulada(entrada);
 
         entrada.close();
     }
@@ -70,6 +70,19 @@ public class Bucles1 {
 
         for (int y=0; y<arrayInvertido.length;y++){
             System.out.println("Elemento " + y + " del array invertido es: " + arrayInvertido[y]);
+        }
+    }
+
+    private static void CalcularSumaAcumulada(Scanner scannerEntrada){
+        int[] arrayASumar = {1,2,3,4,5};
+        int[] arraySumatoria = new int[5];
+
+        int sumatoria =0;
+        for(int z=0;z<arrayASumar.length;z++){
+            System.out.println("Elemento "+ z+ " del array a sumar: " + arrayASumar[z]);
+            sumatoria+=arrayASumar[z];
+            arraySumatoria[z] = sumatoria;
+            System.out.println("Elemento " + z + " del array sumatoria: " + arraySumatoria[z] );
         }
     }
 }
