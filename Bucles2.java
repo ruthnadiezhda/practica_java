@@ -63,7 +63,7 @@ public class Bucles2 {
     private static void AdivinandoUnNumero(Scanner scannerEntrada){
         try {
             int numeroIngresado;
-            int numeroAleatorio=(int)(Math.random()*(20-1))+1;;
+            int numeroAleatorio=(int)(Math.random()*(20-1))+1;
             do {
                 System.out.println("Ingrese un numero a adivinar entre 1 y 20:");
                 numeroIngresado = scannerEntrada.nextInt();
